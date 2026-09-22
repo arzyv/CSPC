@@ -18,6 +18,6 @@ PW1 – Lab A
 **Tests:** all passing?
 yes, 3 passed
 **Conclusion:**
-- in this lab, i learned how git and github can help me organize my coursework and track changes with commits and branches. I also used pytest and python loop with NumPy, which showed me why optimized functions are useful for larger simulations.                      
+- In this lab, I learned how Git and Github can help me organize my coursework and track changes with commits and branches. I also used pytest and Python loop with NumPy, which showed me why optimized functions are useful for larger simulations.                      
 
  
