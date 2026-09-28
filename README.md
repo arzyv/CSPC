@@ -22,3 +22,10 @@ yes, 3 passed
 - My partner cloned my repository and run the tests on their laptop
 - all 3 tests passed
 - No changes were needed
+
+---
+## PW1 - Lab B: Data, Plotting and Automation
+
+The data showed that the count decreases as time increases, which is what we would expect from radioactive decay.
+The observed data matched the analytical decay law well. The points and the analytical curve had a similar overall shape, but the observed values were not exactly the same as the calculated ones.
+The Snakemake pipeline runs "ploy.py" using the CSV file as input and created "figure.png". It also avoids rerunning the plot when nothing has changed. 
