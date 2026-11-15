@@ -1,0 +1,2 @@
+CreateRuleException in file "/home/ufaz/CSPC/PW1/Lab B/Snakefile", line 8:
+The name plot is already used by another rule
