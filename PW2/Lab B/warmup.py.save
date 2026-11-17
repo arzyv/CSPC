@@ -1,0 +1,59 @@
+import numpy as np
+from scipy.optimize import minimize, newton
+
+# Part 2A: Easy convex function
+def f(x):
+    return (x - 3)**2 + 1
+
+def f_prime(x):
+    return 2 * (x - 3)
+
+print("Part 2A")
+
+# 1. gradient descent
+x = 0.0
+for i in range(100):
+    x = x - 0.1 * f_prime(x)
+print("Gradient descent:", x)
+
+# 2. newton's method
+x_newton = newton(f_prime, 0.0)
+print("Newton:", x_newton)
+
+# 3. SLSQP
+res = minimize(f, [0.0], method="SLSQP")
+print("SLSQP:", res.x[0])
+
+
+# Part 2B: Harder landscape
+def g(x):
+    return x**4 - 3*x**2 + x + 5
+
+def g_prime(x):
+    return 4*x**3 - 6*x + 1
+
+ def g_double_prime(x):
+    return 12*x**2 - 6
+
+print("\n--- Part 2B ---")
+
+for x0 in [0.0, 2.0]:
+    print(f" strting from x0 = {x0}:")
+    
+    # gradient descent
+    x = x0
+    for i in range(200):
+        x = x - 0.05 * g_prime(x)
+    print("  GD:", x)
+    
+    # Newton
+    try:
+        xn = newton(g_prime, x0)
+        gpp = g_double_prime(xn)
+        print(f"  Nwton: {xn} (g'' = {gpp})")
+    except:
+        print("  newton didn't converge")
+        
+    # SLSQP
+    res_g = minimize(g, [x0], method="SLSQP")
+    print("  SLSQP:", res_g.x[0])
